@@ -1,4 +1,4 @@
-const apiKey = process.env.REACT_APP_API_KEY;
+const apiKey = ad058c46519dfc70db6c3c679ec618d4;
 
 export const popularMoviesUrl = `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&language=en-US`;
 
