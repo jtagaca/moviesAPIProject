@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap");
 
 * {
   margin: 0;
@@ -12,7 +12,10 @@
   margin: 15px;
   background-color: rgb(255, 255, 255);
   border-radius: 9px 9px 7px 7px;
-  box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.2);
+  /* box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.2);
+   */
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+    rgba(0, 0, 0, 0.22) 0px 15px 12px;
   transition: 0.3s;
   position: relative;
 }
@@ -37,7 +40,7 @@
 .movie-item-body h3 {
   margin: 5px 0;
   font-size: 20px;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-weight: 400;
 }
 

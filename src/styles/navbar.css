@@ -7,7 +7,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid white;
 }
 
 .logo {
@@ -18,7 +17,7 @@
   font-family: -webkit-pictograph;
   border-radius: 40px;
   background: black;
-  padding: 12px;
+  padding: 10px 40px;
   box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }
 

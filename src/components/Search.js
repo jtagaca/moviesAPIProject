@@ -27,7 +27,6 @@ const Search = () => {
       <Button
         type="submit"
         style={{ background: "black", color: "white", borderRadius: 40 }}
-        // variant="outlined"
       >
         Search
       </Button>

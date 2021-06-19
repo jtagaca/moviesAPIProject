@@ -9,7 +9,6 @@
   flex-wrap: wrap;
   justify-content: center;
   padding: 5px;
-  background: black;
 }
 
 .movie-list-body-header {
@@ -23,6 +22,8 @@
 
 .movie-list-movies {
   display: flex;
+  background: antiquewhite;
+  margin: 0px;
   flex-wrap: wrap;
   justify-content: center;
 }

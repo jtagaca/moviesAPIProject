@@ -1,17 +1,22 @@
-import React, { useEffect } from 'react';
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import fetchMovies from '../actions/fetchMovies';
-import MovieItem from '../components/MovieItem';
-import { clearMovie, clearTrailerId, changeFilter } from '../actions/index';
-import Navbar from '../components/Navbar';
-import GenreFilter from '../components/GenreFilter';
-import '../styles/movie-list.css';
-import genres from '../helpers/genres';
-import Loading from '../components/Loading';
+import React, { useEffect } from "react";
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
+import fetchMovies from "../actions/fetchMovies";
+import MovieItem from "../components/MovieItem";
+import { clearMovie, clearTrailerId, changeFilter } from "../actions/index";
+import Navbar from "../components/Navbar";
+import GenreFilter from "../components/GenreFilter";
+import "../styles/movie-list.css";
+import genres from "../helpers/genres";
+import Loading from "../components/Loading";
 
 const MovieList = ({
-  movies, filter, fetchMovies, clearMovie, clearTrailerId, changeFilter,
+  movies,
+  filter,
+  fetchMovies,
+  clearMovie,
+  clearTrailerId,
+  changeFilter,
 }) => {
   useEffect(() => {
     fetchMovies();
@@ -19,7 +24,7 @@ const MovieList = ({
     clearTrailerId();
   }, [fetchMovies, clearMovie, clearTrailerId]);
 
-  const handleFilterChange = filter => changeFilter(filter);
+  const handleFilterChange = (filter) => changeFilter(filter);
 
   if (movies.moviesLoading) {
     return <Loading />;
@@ -36,9 +41,16 @@ const MovieList = ({
     );
   }
 
-  const filterId = Object.keys(genres).filter(key => genres[key] === filter)[0];
+  const filterId = Object.keys(genres).filter(
+    (key) => genres[key] === filter
+  )[0];
 
-  const filtered = filter === 'All' ? movies.movies : movies.movies.filter(movie => movie.genreIds.includes(parseInt(filterId, 10)));
+  const filtered =
+    filter === "All"
+      ? movies.movies
+      : movies.movies.filter((movie) =>
+          movie.genreIds.includes(parseInt(filterId, 10))
+        );
 
   return (
     <div className="movie-list">
@@ -50,11 +62,8 @@ const MovieList = ({
         <div className="movie-list-movies">
           {
             /* eslint-disable react/prop-types */
-            filtered.map(movie => (
-              <MovieItem
-                movie={movie}
-                key={movie.id.toString()}
-              />
+            filtered.map((movie) => (
+              <MovieItem movie={movie} key={movie.id.toString()} />
             ))
             /* eslint-enable react/prop-types */
           }
@@ -78,11 +87,11 @@ const mapStateToProps = ({ movies, filter }) => ({
   filter,
 });
 
-const mapDispatchToProps = dispatch => ({
+const mapDispatchToProps = (dispatch) => ({
   fetchMovies: () => dispatch(fetchMovies()),
   clearMovie: () => dispatch(clearMovie()),
   clearTrailerId: () => dispatch(clearTrailerId()),
-  changeFilter: filter => dispatch(changeFilter(filter)),
+  changeFilter: (filter) => dispatch(changeFilter(filter)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(MovieList);
