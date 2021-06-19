@@ -71,9 +71,8 @@
 
 .rating {
   padding: 5px;
-  position: absolute;
-  bottom: 5px;
-  right: 5px;
+  /* position: absolute; */
+  /* float: right; */
   font-size: 18px;
   font-weight: 700;
 }
