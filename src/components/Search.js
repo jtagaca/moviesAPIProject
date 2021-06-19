@@ -1,35 +1,37 @@
-import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import '../styles/search.css';
-import searchMovies from '../actions/searchMovies';
-
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import "../styles/search.css";
+import { TextField, Button } from "@material-ui/core";
+import searchMovies from "../actions/searchMovies";
 const Search = () => {
-  const [query, handleChange] = useState('');
-
+  const [query, handleChange] = useState("");
   const dispatch = useDispatch();
-
-  const handleSubmit = e => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     searchMovies(query)(dispatch);
-    handleChange('');
+    handleChange("");
   };
-
   return (
     <form onSubmit={handleSubmit} className="search-form">
-      <input
+      <TextField
+        id="outlined-secondary"
+        label="Search for a movie..."
+        variant="outlined"
+        color="primary"
         type="text"
-        placeholder="Search"
         value={query}
-        onChange={e => handleChange(e.target.value)}
+        onChange={(e) => handleChange(e.target.value)}
         className="search-input"
       />
-      <input
+      {/* <input type="submit" value="Search" className="search-btn" /> */}
+      <Button
         type="submit"
-        value="Search"
-        className="search-btn"
-      />
+        style={{ background: "black", color: "white", borderRadius: 40 }}
+        // variant="outlined"
+      >
+        Search
+      </Button>
     </form>
   );
 };
-
 export default Search;
