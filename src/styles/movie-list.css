@@ -1,6 +1,6 @@
 .movie-list {
   width: 100%;
-  background-color: #333;
+  background-color: black;
   min-height: 100vh;
 }
 
@@ -9,6 +9,7 @@
   flex-wrap: wrap;
   justify-content: center;
   padding: 5px;
+  background: black;
 }
 
 .movie-list-body-header {
